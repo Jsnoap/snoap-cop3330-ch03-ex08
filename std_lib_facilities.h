@@ -1,4 +1,9 @@
 /*
+ *  UCF COP3330 Fall 2021 Assignment 5 Solution
+ *  Copyright 2021 Jordan Snoap
+ */
+
+/*
 std_lib_facilities.h
 */
 
@@ -23,7 +28,7 @@ Revised Febrary 2 2015: randint() can now be seeded (see exercise 5.13).
 Revised August 3, 2020: a cleanup removing support for ancient compilers
 */
 
-#ifndef H112
+//#ifndef H112
 #define H112 080315L
 
 
@@ -68,7 +73,7 @@ struct Range_error : out_of_range {	// enhanced vector range error reporting
 
 // trivially range-checked vector (no iterator checking):
 template< class T> struct Vector : public std::vector<T> {
-	using size_type = typename std::vector<T>::size_type;
+	//using size_type = typename std::vector<T>::size_type;
 
 /* #ifdef _MSC_VER
 	// microsoft doesn't yet support C++11 inheriting constructors
@@ -98,7 +103,7 @@ template< class T> struct Vector : public std::vector<T> {
 
 // trivially range-checked string (no iterator checking):
 struct String : std::string {
-	using size_type = std::string::size_type;
+	//using size_type = std::string::size_type;
 	//	using string::string;
 
 	char& operator[](unsigned int i) // rather than return at(i);
@@ -215,19 +220,20 @@ inline default_random_engine& get_rand()
 
 inline void seed_randint(int s) { get_rand().seed(s); }
 
-inline int randint(int min, int max) { return uniform_int_distribution<>{min, max}(get_rand()); }
+//inline int randint(int min, int max) { return uniform_int_distribution<>{min, max}(get_rand()); }
 
-inline int randint(int max) { return randint(0, max); }
+//inline int randint(int max) { return randint(0, max); }
 
 //inline double sqrt(int x) { return sqrt(double(x)); }	// to match C++0x
 
 // container algorithms. See 21.9.   // C++ has better versions of this:
 
+/*
 template<typename C>
-using Value_type = typename C::value_type;
+//using Value_type = typename C::value_type;
 
 template<typename C>
-using Iterator = typename C::iterator;
+//using Iterator = typename C::iterator;
 
 template<typename C>
 // requires Container<C>()
@@ -235,6 +241,7 @@ void sort(C& c)
 {
 	std::sort(c.begin(), c.end());
 }
+
 
 template<typename C, typename Pred>
 // requires Container<C>() && Binary_Predicate<Value_type<C>>()
@@ -258,3 +265,4 @@ Iterator<C> find_if(C& c, Pred p)
 }
 
 #endif //H112
+*/
