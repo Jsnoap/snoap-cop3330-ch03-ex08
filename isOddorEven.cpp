@@ -5,17 +5,16 @@
 void isOddorEven(int num)
 {
     if (abs(num) % 2 == 1)
-        std::cout << "The value " << num << " is an odd number." << std::endl;
+        cout << "The value " << num << " is an odd number.\n";
     else
-        std::cout << "The value " << num << " is an even number." << std::endl;
+        cout << "The value " << num << " is an even number.\n";
 }
 
-// used to call the "isOddorEven()" function
+// Used to get user input and call the "isOddorEven()" function
 int main()
 {
-    isOddorEven(5);
-    isOddorEven(4);
-    isOddorEven(0);
-    isOddorEven(-4);
-    isOddorEven(-21451);
+    int value;
+    cout << "Enter a number: ";
+    cin >> value;
+    isOddorEven(value);
 }
